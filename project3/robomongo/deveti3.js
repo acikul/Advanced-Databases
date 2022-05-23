@@ -1,0 +1,1 @@
+db.arts.createIndex({"review/userId": 1})

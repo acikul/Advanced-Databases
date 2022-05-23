@@ -1,0 +1,1 @@
+db.arts.find({"review/text": {$regex: "mindful"}})

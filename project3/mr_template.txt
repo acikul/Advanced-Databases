@@ -1,0 +1,26 @@
+db.arts.mapReduce (
+        `function() {
+                if (this.subtypes !== undefined)
+                    this.subtypes.forEach( function(subtype) {            
+                        emit( subtype, {count : 1} );                                       
+                        }
+                    );  
+            };`,
+        `function(key, values) {
+            var rv = {
+                        subtype: key,                  
+                        count:0
+                        };
+            values.forEach( function(value) {        
+                rv.count += value.count;            
+            });            
+            return rv;  
+        };`,
+        {   // out: "mr_cards",  --> zanemaruje se, čak i da se navede
+            query: { subtypes: "Antelope" },
+            finalize: `function (key, val) {
+                val.wasHere = 'Finalize';
+                return val;
+            }`
+        }
+);

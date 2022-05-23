@@ -1,0 +1,1 @@
+db.products.updateMany({price: "unknown"}, {$unset: {price: ""}})

@@ -1,0 +1,1 @@
+db.arts.find({$text: {$search: "mindful"}})

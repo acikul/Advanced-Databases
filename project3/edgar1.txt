@@ -1,0 +1,27 @@
+Ime baze: projekt3
+Ime kolekcije: arts
+Primjer dokumenta:
+db.arts.findOne()
+{
+	"_id" : ObjectId("61de23de8f2376b167be882b"),
+	"product/productId" : "B000GKXY4S",
+	"product/title" : "Crazy Shape Scissor Set",
+	"product/price" : "unknown",
+	"review/userId" : "A1QA985ULVCQOB",
+	"review/profileName" : "Carleen M. Amadio \"Lady Dragonfly\"",
+	"review/helpfulness" : "2/2",
+	"review/score" : 5,
+	"review/time" : ISODate("2011-08-23T02:00:00Z"),
+	"review/summary" : "Fun for adults too!",
+	"review/text" : "I really enjoy the..."
+}
+Broj dokumenata: 27980
+Prosječna veličina dokumenta: 752
+Veličina kolekcije - size: 21056519 bytes
+Veličina kolekcije na disku - storageSize: 10764288 bytes
+
+Zadnje dvije vrijednosti razlikuju se jer je size veličina nekompresiranih svih dokumenata u kolekciji, a storageSize je veličina alocirana na disku za kolekciju i manja je od size zbog kompresije.
+Niti jedna od veličina ne uključuje veličinu indeksa nad tom kolekcijom.
+
+
+

@@ -1,0 +1,1 @@
+db.arts.find({"review/userId": {$in: ["A2D1LPEUCTNT8X", "AR8U695GGIP6V"]}}).explain()
