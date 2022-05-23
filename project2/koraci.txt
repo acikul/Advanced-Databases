@@ -1,0 +1,25 @@
+shp2pgsql-gui na MacOS-u se nije htio spojiti na database
+pa je korištena narebda nađena u POSTGIS dokumentaciji :
+
+shp2pgsql -D -I -s 4326 gis.osm_water_a_free_1.shp | psql --dbname=GISDB --port=5433 --username=postgres
+
+argumenti:
+    -D tells the program to generate “dump format” which is much faster to load than the default “insert format”
+    -I tells the program to create a spatial index on the table after loading is complete
+    -s defines the SRID
+
+preimenovanje tablica:
+    alter table "gis.osm_buildings_a_free_1" rename to buildings;
+    alter table "gis.osm_landuse_a_free_1" rename to landuse;
+    alter table "gis.osm_natural_free_1" rename to nature;
+    alter table "gis.osm_places_free_1" rename to places;
+    alter table "gis.osm_pofw_free_1" rename to pofw;
+    alter table "gis.osm_pois_free_1" rename to pois;
+    alter table "gis.osm_railways_free_1" rename to railways;
+    alter table "gis.osm_roads_free_1" rename to roads;
+    alter table "gis.osm_traffic_free_1" rename to traffic;
+    alter table "gis.osm_transport_free_1" rename to transport; 
+    alter table "gis.osm_water_a_free_1" rename to water;
+    alter table "gis.osm_waterways_free_1" rename to waterways;
+    alter table "gis.osm_natural_a_free_1" rename to "natural";
+
